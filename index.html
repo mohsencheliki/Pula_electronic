@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pula Electronic</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="main-header">
+  <div class="logo">Pula Electronic</div>
+  <nav class="nav-links"></nav>
+</header>
+
+<section class="topbar">
+  <input id="searchInput" placeholder="جستجو..." oninput="renderProducts()" />
+  <select id="langSelect" onchange="switchLang(this.value)">
+    <option value="fa">فارسی</option>
+    <option value="en">English</option>
+  </select>
+  <div class="cart-link" onclick="openCart()">سبد خرید (<span id="cartCount">0</span>)</div>
+</section>
+
+<section id="productList" class="grid"></section>
+
+<div id="productModal" class="modal hidden"></div>
+<div id="cartModal" class="modal hidden"></div>
+
+<div id="authModal" class="modal hidden">
+  <div class="card">
+    <h2 id="authTitle">ورود</h2>
+    <input id="authEmail" type="email" placeholder="ایمیل">
+    <input id="authPassword" type="password" placeholder="رمز عبور">
+    <div id="registerExtra" style="display:none">
+      <input id="authName" type="text" placeholder="نام">
+    </div>
+    <button onclick="submitAuth()">تایید</button>
+    <p><a href="#" onclick="toggleAuthMode();return false;">ثبت‌نام / ورود</a></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
